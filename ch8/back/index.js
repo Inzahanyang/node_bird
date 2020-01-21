@@ -15,7 +15,7 @@ const postAPIRouter = require("./routes/post");
 const postsAPIRouter = require("./routes/posts");
 const hashtagAPIRouter = require("./routes/hashtag");
 
-// const prod = process.env.NODE_ENV === "production";
+const prod = process.env.NODE_ENV === "production";
 dotenv.config();
 const app = express();
 db.sequelize.sync();
