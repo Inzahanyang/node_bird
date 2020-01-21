@@ -21,25 +21,25 @@ const app = express();
 db.sequelize.sync();
 passportConfig();
 
-// if (prod) {
-//   app.use(hpp());
-//   app.use(helmet());
-//   app.use(morgan("combined"));
-//   app.use(
-//     cors({
-//       origin: /nodebird\.com$/,
-//       credentials: true
-//     })
-//   );
-// } else {
-app.use(morgan("dev"));
-app.use(
-  cors({
-    origin: true,
-    credentials: true
-  })
-);
-// }
+if (prod) {
+  app.use(hpp());
+  app.use(helmet());
+  app.use(morgan("combined"));
+  app.use(
+    cors({
+      origin: "http://woolim.shop",
+      credentials: true
+    })
+  );
+} else {
+  app.use(morgan("dev"));
+  app.use(
+    cors({
+      origin: true,
+      credentials: true
+    })
+  );
+}
 
 app.use("/", express.static("uploads"));
 app.use(express.json());
@@ -52,8 +52,8 @@ app.use(
     secret: process.env.COOKIE_SECRET,
     cookie: {
       httpOnly: true,
-      secure: false // https를 쓸 때 true
-      // domain: prod && '.nodebird.com',
+      secure: false, // https를 쓸 때 true
+      domain: prod && ".woolim.shop"
     },
     name: "rnbck"
   })
