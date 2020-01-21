@@ -27,7 +27,7 @@ if (prod) {
   app.use(morgan("combined"));
   app.use(
     cors({
-      origin: "http://woolim.shop",
+      origin: /woolim\.shop$/,
       credentials: true
     })
   );
