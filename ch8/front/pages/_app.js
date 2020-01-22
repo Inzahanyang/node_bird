@@ -28,7 +28,7 @@ const NodeBird = ({ Component, store, pageProps }) => {
     <Container>
       <Provider store={store}>
         <Helmet
-          title="NodeBird"
+          title="방구함"
           htmlAttributes={{ lang: "ko" }}
           meta={[
             {
@@ -45,15 +45,15 @@ const NodeBird = ({ Component, store, pageProps }) => {
             },
             {
               name: "description",
-              content: "제로초의 NodeBird SNS"
+              content: "우리가 직접올리고 계약하자"
             },
             {
               name: "og:title",
-              content: "NodeBird"
+              content: "방구함"
             },
             {
               name: "og:description",
-              content: "제로초의 NodeBird SNS"
+              content: "우리가 직접올리고 계약하자"
             },
             {
               property: "og:type",
